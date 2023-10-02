@@ -21,7 +21,7 @@ class CalliopeFactory(CarFactory):
 
 
 class GlissadeFactory(CarFactory):
-    @abstractmethod
+    @staticmethod
     def create_car(
         current_date, last_service_date, current_mileage, last_service_mileage
     ):
@@ -31,6 +31,7 @@ class GlissadeFactory(CarFactory):
 
 
 class PalindromeFactory(CarFactory):
+    @staticmethod
     def create_car(current_date, last_service_date, warning_light_is_on):
         car_engine = engine.SternmanEngine(warning_light_is_on)
         car_battery = battery.SpindlerBattery(current_date, last_service_date)
@@ -38,7 +39,7 @@ class PalindromeFactory(CarFactory):
 
 
 class RorschachFactory(CarFactory):
-    @abstractmethod
+    @staticmethod
     def create_car(
         current_date, last_service_date, current_mileage, last_service_mileage
     ):
@@ -48,7 +49,7 @@ class RorschachFactory(CarFactory):
 
 
 class ThovexFactory(CarFactory):
-    @abstractmethod
+    @staticmethod
     def create_car(
         current_date, last_service_date, current_mileage, last_service_mileage
     ):
